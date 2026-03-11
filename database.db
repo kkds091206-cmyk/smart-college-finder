@@ -1,0 +1,33 @@
+import sqlite3
+
+conn = sqlite3.connect("database.db")
+cur = conn.cursor()
+
+cur.execute("""
+CREATE TABLE students(
+name TEXT,
+age INTEGER,
+phone TEXT,
+district TEXT,
+mark10 INTEGER,
+mark12 INTEGER,
+course TEXT,
+fee INTEGER,
+username TEXT,
+password TEXT)
+""")
+
+cur.execute("""
+CREATE TABLE staff(
+college TEXT,
+location TEXT,
+district TEXT,
+contact TEXT,
+type TEXT,
+autonomous TEXT,
+username TEXT,
+password TEXT)
+""")
+
+conn.commit()
+conn.close()
